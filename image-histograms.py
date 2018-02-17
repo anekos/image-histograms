@@ -81,9 +81,9 @@ def collect(directory_path):
     for (index, path) in enumerate(targets):
         try:
             collect_file(path)
-            print('%d/%d\t%s' % (index + 1, total, path))
+            stderr.write("[2K\r%d%% (%d of %d) %s" % (now * 100 / total, now, total, path))
         except:
-            print >> stderr, 'ERROR: %d/%d\t%s' % (index + 1, total, path)
+            print >> stderr, '\nERROR: %d/%d\t%s' % (index + 1, total, path)
 
     conn.commit()
 
