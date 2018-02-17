@@ -84,7 +84,6 @@ def collect(directory_path):
             print('%d/%d\t%s' % (index + 1, total, path))
         except:
             print >> stderr, 'ERROR: %d/%d\t%s' % (index + 1, total, path)
-            raise
 
     conn.commit()
 
